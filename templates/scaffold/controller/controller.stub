@@ -17,7 +17,7 @@ class $MODEL_NAME$Controller extends AppBaseController
 
     public function __construct($MODEL_NAME$Repository $$MODEL_NAME_CAMEL$Repo)
     {
-        if(!$user->hasPermissionTo('$MODEL_NAME_PLURAL_SNAKE$')){
+        if(!auth()->user->hasPermissionTo('$MODEL_NAME_PLURAL_SNAKE$')){
             abort(403, 'Unauthorized action.');
         }
         $this->$MODEL_NAME_CAMEL$Repository = $$MODEL_NAME_CAMEL$Repo;
